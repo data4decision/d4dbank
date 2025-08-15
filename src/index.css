@@ -1,0 +1,88 @@
+/* Index.css */
+@import "tailwindcss";
+
+/* Base styles */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Light mode styles (by default) */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Zoom-in and Zoom-out effect for background images */
+@keyframes backgroundZoomInOut {
+  0% {
+    background-image: url('bank1.jpg');
+    transform: scale(1);
+  }
+  50% {
+    background-image: url('bank2.jpg');
+    transform: scale(1.2);
+  }
+  100% {
+    background-image: url('bank3.jpg');
+    transform: scale(1);
+  }
+}
+
+/* Slide-in effect for images from the right */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide-in effect from the top for the header */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-50vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slide-in effect from the bottom for the paragraph */
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(50vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Tailwind CSS animations */
+.animate-backgroundZoomInOut {
+  animation: backgroundZoomInOut 6s ease-in-out infinite;
+}
+
+.animate-slideInRight {
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+.animate-slideInFromTop {
+  animation: slideInFromTop 0.7s ease-out forwards;
+}
+
+.animate-slideInFromBottom {
+  animation: slideInFromBottom 0.7s ease-out forwards;
+}
