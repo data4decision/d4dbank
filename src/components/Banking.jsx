@@ -94,7 +94,7 @@ const Banking = ({ darkMode, setDarkMode }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <NextArrow darkMode={darkMode} />,
     prevArrow: <PrevArrow darkMode={darkMode} />,
