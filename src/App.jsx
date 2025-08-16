@@ -77,7 +77,7 @@ function App() {
     <div className={`${bgClass} ${textClass} min-h-screen font-sans transition-colors duration-300`}>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
-        <Route path="/" element={<Home  />} />
+        <Route path="/" element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />} />
         <Route path="/about" element={<About />} />
         <Route path="/about/about-us" element={<AboutUs />} />
         <Route path="/about/board" element={<Board />} />
