@@ -21,15 +21,15 @@ body {
 /* Zoom-in and Zoom-out effect for background images */
 @keyframes backgroundZoomInOut {
   0% {
-    background-image: url('bank1.jpg');
+    background-image: url('/bank1.jpg');
     transform: scale(1);
   }
   50% {
-    background-image: url('bank2.jpg');
+    background-image: url('/bank2.jpg');
     transform: scale(1.2);
   }
   100% {
-    background-image: url('bank3.jpg');
+    background-image: url('/bank3.jpg');
     transform: scale(1);
   }
 }

@@ -6,8 +6,8 @@ const Hero = ({ darkMode, setDarkMode }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   const images = [
-    { src: 'bank4.jpg', alt: 'First image' },
-    { src: 'bank5.jpg', alt: 'Second image' },
+    { src: '/bank4.jpg', alt: 'First image' },
+    { src: '/bank5.jpg', alt: 'Second image' },
   ];
 
   const content = [

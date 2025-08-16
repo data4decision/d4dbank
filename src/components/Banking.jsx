@@ -98,10 +98,10 @@ const Banking = ({ darkMode, setDarkMode }) => {
   ];
 // Array of bank data
   const bank = [
-    { id: 'bank1.jpg', title: 'Traides FX', description: 'Take trivial example which of us ever all undertakes laborious.' },
-    { id: 'bank2.jpg', title: 'Multicurrency a/c', description: 'Explore our premium savings options with higher returns.' },
-    { id: 'bank3.jpg', title: 'Pension Scheme', description: 'Lock in great rates with our certificate of deposit.' },
-    { id: 'bank4.jpg', title: 'Mutual Funds', description: 'Maximize your savings with competitive interest rates.' },
+    { id: '/bank1.jpg', title: 'Traides FX', description: 'Take trivial example which of us ever all undertakes laborious.' },
+    { id: '/bank2.jpg', title: 'Multicurrency a/c', description: 'Explore our premium savings options with higher returns.' },
+    { id: '/bank3.jpg', title: 'Pension Scheme', description: 'Lock in great rates with our certificate of deposit.' },
+    { id: '/bank4.jpg', title: 'Mutual Funds', description: 'Maximize your savings with competitive interest rates.' },
   ];
 
   return (
@@ -109,7 +109,7 @@ const Banking = ({ darkMode, setDarkMode }) => {
       {/* Background image with responsive classes */}
       <div
         className={`w-full h-[700px] sm:h-[800px] md:h-[800px] lg:h-[600px] bg-cover bg-center opacity-100 ${primaryBg}`}
-        style={{ backgroundImage: `url('bank4.jpg')` }}
+        style={{ backgroundImage: `url('/bank4.jpg')` }}
       >
         {/* Text content inside the background image */}
         <div className="flex flex-col gap-6 items-center absolute p-6 w-full">
