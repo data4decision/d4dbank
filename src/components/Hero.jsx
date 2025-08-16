@@ -38,7 +38,7 @@ const Hero = ({ darkMode, setDarkMode }) => {
 
   // Theme-aware tokens
   const primaryBg = darkMode ? 'bg-[#0b0b5c]' : 'bg-[#f47b20]';
-  const textColor = darkMode ? 'text-white' : 'text-[#0b0b5c]';
+  const textColor = darkMode ? 'text-[#f47b20]' : 'text-[#0b0b5c]';
   const accentBtnBg = darkMode ? 'bg-[#ffb366]' : 'bg-[#0b0b5c]';
   const accentBtnText = darkMode ? 'text-[#0b0b5c]' : 'text-white';
   const playIconBg = 'bg-red-600 text-white';
