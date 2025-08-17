@@ -45,9 +45,11 @@ const Banking = ({ darkMode, setDarkMode }) => {
   const bankBg = darkMode ? 'bg-gray-300' : 'bg-white';
   const textColor = darkMode ? 'text-white' : 'text-[#0b0b5c]';
   const accentBtnBg = darkMode ? 'bg-[#ffb366]' : 'bg-[#0b0b5c]';
- 
-  const accantBtnText = darkMode ? 'text-[#f47b20]' : 'text-black';
-  const accontBtnText = darkMode ? 'text-[#f49c90]' : 'text-[#5c2e8c]';
+  const primarysBg = darkMode ? 'bg-white' : 'bg-pink-100';
+  const textsColor = darkMode ? 'text-[#F47b20]' : 'text-[#0b0b5c]';
+ const secondBg = darkMode ? 'bg-[#f47b20]' : 'bg-[#0b0b5c]';
+  const accantText = darkMode ? 'text-white' : 'text-[#f47b20]';
+  const accontBorder = darkMode ? 'text-[#f49c90]' : 'text-[#5c2e8c]';
   const individualBg = darkMode ? 'bg-[#ffb366]' : 'bg-[#0b0b5c]';
   const individualText = darkMode ? 'text-[#0b0b5c]' : 'text-white';
   const companiesBg = darkMode ? 'bg-[#0b0b5c]' : 'bg-[#f47b20]';
@@ -56,9 +58,16 @@ const Banking = ({ darkMode, setDarkMode }) => {
   const companiesHover = darkMode ? 'hover:bg-[#f47b20]' : 'hover:bg-[#ffffff]';
   const cardHoverText = darkMode ? 'text-[#f47b20]' : 'text-[#0b0b5c]';
   const btnColor = darkMode ? 'text-white' : 'text-[#ffffff]';
+  
   const btnHover = darkMode 
     ? 'hover:bg-[#0b0b5c] hover:scale-105 hover:shadow-lg' 
     : 'hover:bg-[#f47b20] hover:scale-105 hover:shadow-lg';
+    const linkHover = darkMode 
+    ? 'hover:text-[#f47b20] hover:scale-105 hover:shadow-lg' 
+    : 'hover:text-pink-800 hover:scale-105 hover:shadow-lg';
+    const textHover = darkMode 
+    ? 'hover:text-[#f47b20] hover:scale-105 hover:shadow-lg' 
+    : 'hover:text-pink-800 hover:scale-105 hover:shadow-lg';
 
   // Carousel settings for both sliders
   const [sliderSettings, setSliderSettings] = useState({
@@ -85,7 +94,45 @@ const Banking = ({ darkMode, setDarkMode }) => {
     ],
   });
 
-  // Adjust slider settings based on screen width
+  // Emergenxy
+   const [emmergencySliderSettings, setEmmergencySliderSettings] = useState({
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow darkMode={darkMode} />,
+    prevArrow: <PrevArrow darkMode={darkMode} />,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 0
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+
+  // Adjust emmergency slider settings based on screen width
   const adjustSliderSettings = () => {
     const width = window.innerWidth;
 
@@ -104,6 +151,26 @@ const Banking = ({ darkMode, setDarkMode }) => {
     }
   };
 
+
+  // Adjust emmergency slider settings based on screen width
+  const adjustEmmergencySliderSettings = () => {
+    const width = window.innerWidth;
+
+    if (width <= 1024) {
+      setEmmergencySliderSettings((prevSettings) => ({
+        ...prevSettings,
+        slidesToShow: 1, // Show 1 slide on mobile and tablet
+        slidesToScroll: 1,
+      }));
+    } else {
+      setEmmergencySliderSettings((prevSettings) => ({
+        ...prevSettings,
+        slidesToShow: 4, // Show 3 slides on desktop
+        slidesToScroll: 1,
+      }));
+    }
+  };
+
   useEffect(() => {
     // Call on component mount
     adjustSliderSettings();
@@ -114,6 +181,20 @@ const Banking = ({ darkMode, setDarkMode }) => {
     // Cleanup the event listener on unmount
     return () => {
       window.removeEventListener("resize", adjustSliderSettings);
+    };
+  }, []);
+
+  // Emmergency useEffect
+  useEffect(() => {
+    // Call on component mount
+    adjustEmmergencySliderSettings();
+
+    // Add event listener for window resize to dynamically adjust settings
+    window.addEventListener("resize", adjustEmmergencySliderSettings);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener("resize", adjustEmmergencySliderSettings);
     };
   }, []);
 
@@ -292,6 +373,184 @@ const Banking = ({ darkMode, setDarkMode }) => {
   ))}
 </Slider>
       </div>
+      <div className={`text-center pt-20 ${textsColor} py-10 ${primarysBg}`}>
+        <h1 className="text-[25px] sm:text-[30px] md:text-[35px] font-bold">Emergency Service Requests</h1>
+        <p className="text-[15px] sm:text-[18px] md:text-[25px] mt-4">List of banking service requests all in one place.</p>
+        <div className="flex flex-col">
+         
+    <div className="slider-container pt-30 ml-18 mr-18">
+      <Slider {...emmergencySliderSettings}>
+        <div className={`  ${primarysBg}`}>
+          <div className={`flex flex-col gap-5 items-center ${primarysBg} border-l border-r px-4 py-6 group`}>
+            <div className="relative">
+              <img src="/Emmers1.png" alt="" className={`w-20 h-20 transition duration-300 px-3 py-3 rounded-full border cursor-pointer ${accontBorder} ${individualHover}`}/>
+            </div>
+            <div className={`text-[15px] md:text-[25px] sm:text-[30px] ${textsColor}`}>
+              <p>Mobile Banking</p>
+            </div>
+            <div className="opacity-0 transition-opacity duration-300 group-hover:opacity-100 ">
+              <FaChevronDown size={28}/>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className={`  ${primarysBg}`}>
+             <div className={`flex flex-col gap-5 items-center ${primarysBg} border-l border-r px-4 py-6 group`}>
+            <div className="relative">
+              <img src="/Emmers2.png" alt="" className={`w-20 h-20 transition duration-300 px-3 py-3 rounded-full border cursor-pointer ${accontBorder} ${individualHover}`}/>
+            </div>
+            <div className={`text-[15px] md:text-[25px] sm:text-[30px] ${textsColor}`}>
+              <p>Mobile Banking</p>
+            </div>
+            <div className="opacity-0 transition-opacity duration-300 group-hover:opacity-100 ">
+              <FaChevronDown size={28}/>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div>
+          <div className={`  ${primarysBg}`}>
+             <div className={`flex flex-col gap-5 items-center ${primarysBg} border-l border-r px-4 py-6 group`}>
+            <div className="relative">
+              <img src="/Emmers3.png" alt="" className={`w-20 h-20 transition duration-300 px-3 py-3 rounded-full border cursor-pointer ${accontBorder} ${individualHover}`}/>
+            </div>
+            <div className={`text-[15px] md:text-[25px] sm:text-[30px] ${textsColor}`}>
+              <p>Mobile Banking</p>
+            </div>
+            <div className="opacity-0 transition-opacity duration-300 group-hover:opacity-100 ">
+              <FaChevronDown size={28}/>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div>
+          <div className={`  ${primarysBg}`}>
+             <div className={`flex flex-col gap-5 items-center ${primarysBg} border-l border-r px-4 py-6 group`}>
+            <div className="relative">
+              <img src="/Emmers4.png" alt="" className={`w-20 h-20 transition duration-300 px-3 py-3 rounded-full border cursor-pointer ${accontBorder} ${individualHover}`}/>
+            </div>
+            <div className={`text-[15px] md:text-[25px] sm:text-[30px] ${textsColor}`}>
+              <p>Mobile Banking</p>
+            </div>
+            <div className="opacity-0 transition-opacity duration-300 group-hover:opacity-100 ">
+              <FaChevronDown size={28}/>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div>
+          <div className={`  ${primarysBg}`}>
+             <div className={`flex flex-col gap-5 items-center ${primarysBg} border-l border-r px-4 py-6 group`}>
+            <div className="relative">
+              <img src="/Emmers5.png" alt="" className={`w-20 h-20 transition duration-300 px-3 py-3 rounded-full border cursor-pointer ${accontBorder} ${individualHover}`}/>
+            </div>
+            <div className={`text-[15px] md:text-[25px] sm:text-[30px] ${textsColor}`}>
+              <p>Mobile Banking</p>
+            </div>
+            <div className="opacity-0 transition-opacity duration-300 group-hover:opacity-100 ">
+              <FaChevronDown size={28}/>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div className="">
+          <div className={`  ${primarysBg}`}>
+             <div className={`flex flex-col gap-5 items-center ${primarysBg} border-l border-r px-4 py-6 group`}>
+            <div className="relative">
+              <img src="/Emmers2.png" alt="" className={`w-20 h-20 transition duration-300 px-3 py-3 rounded-full border cursor-pointer ${accontBorder} ${individualHover}`}/>
+            </div>
+            <div className={`text-[15px] md:text-[25px] sm:text-[30px] ${textsColor}`}>
+              <p>Mobile Banking</p>
+            </div>
+            <div className="opacity-0 transition-opacity duration-300 group-hover:opacity-100 ">
+              <FaChevronDown size={28}/>
+            </div>
+          </div>
+          </div>
+        </div>
+      </Slider>
+    </div>
+
+
+          <div className="flex flex-col md:flex-row justify-around mt-10 md:mt-20 mx-5 md:mx-20 gap-4">
+  {/* Left column */}
+  <div className="w-full md:w-1/2 border-1 h-[290px]">
+    <a href="#" className="block">
+      <div className="flex items-center justify-between px-6 md:px-10  group">
+        {/* Left Text */}
+        <p className=" transition-colors duration-300 group-hover:text-red-600">
+          Block Deposit / ATM Card
+        </p>
+        {/* Right Arrow with left border */}
+        <div className="border-l h-15 flex items-center pl-3">
+          <FaArrowRight
+            size={24}
+            className=" transition-colors duration-300 group-hover:text-red-600"
+          />
+        </div>
+      </div>
+      <hr />
+    </a>
+
+    <a href="#" className="block">
+      <div className="flex items-center justify-between px-6 md:px-10 group">
+        <p className="transition-colors duration-300 group-hover:text-red-600">
+          Block Deposit / ATM Card
+        </p>
+        <div className="border-l h-14 flex items-center pl-3">
+          <FaArrowRight size={24} className="transition-colors duration-300 group-hover:text-red-600" />
+        </div>
+      </div>
+      <hr />
+    </a>
+
+    <a href="#" className="block">
+      <div className="flex items-center justify-between px-6 md:px-10 group">
+        <p className="transition-colors duration-300 group-hover:text-red-600">
+          Block Deposit / ATM Card
+        </p>
+        <div className="border-l h-14 flex items-center pl-3">
+          <FaArrowRight size={24} className="transition-colors duration-300 group-hover:text-red-600" />
+        </div>
+      </div>
+      <hr />
+    </a>
+
+    <a href="#" className="block">
+      <div className="flex items-center justify-between px-6 md:px-10 group">
+        <p className="transition-colors duration-300 group-hover:text-red-600">
+          Block Deposit / ATM Card
+        </p>
+        <div className="border-l h-14 flex items-center pl-3">
+          <FaArrowRight size={24} className="transition-colors duration-300 group-hover:text-red-600" />
+        </div>
+      </div>
+      <hr />
+    </a>
+    <a href="#" className="block">
+      <div className="flex items-center justify-between px-6 md:px-10 group">
+        <p className="transition-colors duration-300 group-hover:text-red-600">
+          Block Deposit / ATM Card
+        </p>
+        <div className="border-l h-14 flex items-center pl-3">
+          <FaArrowRight size={24} className="transition-colors duration-300 group-hover:text-red-600" />
+        </div>
+      </div>
+    </a>
+  </div>
+
+  {/* Right column */}
+  <div className="w-full md:w-1/2 relative">
+    <img src="/22.png" alt="" className="w-full h-[240px] sm:h-[280px] md:h-[290px] object-cover" />
+    <div className={`absolute flex flex-col items-center gap-3  bottom-4 md:bottom-15 md:left-17 ${accantText}`}>
+      <p className="text-[15px] md:text-[18px] sm:text-[18px] font-bold">Call For</p>
+      <h1 className="text-[17px] md:text-[20px] sm:text-20px] font-bold">Private Banking</h1>
+      <a href="#" className={`text-[17px] md:text-[18px] sm:text-20px] font-bold ${linkHover}`}>+234 913 1234 000</a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
     </div>
   );
 };
