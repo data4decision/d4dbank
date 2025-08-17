@@ -177,7 +177,7 @@ const Banking = ({ darkMode, setDarkMode }) => {
             {/* Companies Card */}
             <a
               href="#"
-              className={`flex md:flex-row justify-between items-center sm:mr-20 w-full p-4 ${companiesText} ${companiesBg} ${companiesHover} transition-all duration-300 transform hover:translate-y-[-20px]`}
+              className={`flex md:flex-row justify-between items-center sm:mr-20 w-[45%] p-4 ${companiesText} ${companiesBg} ${companiesHover} transition-all duration-300 transform hover:translate-y-[-20px]`}
             >
               <div>
                 <p className="text-[12px] sm:text-[15px] md:text-[20px]">Banking for</p>
