@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaChevronDown, FaArrowRight, FaDatabase } from 'react-icons/fa';
 import Slider from 'react-slick';
 
@@ -60,63 +60,62 @@ const Banking = ({ darkMode, setDarkMode }) => {
     ? 'hover:bg-[#0b0b5c] hover:scale-105 hover:shadow-lg' 
     : 'hover:bg-[#f47b20] hover:scale-105 hover:shadow-lg';
 
-  // Carousel settings for the first slider (cards)
-  const settings = {
+  // Carousel settings for both sliders
+  const [sliderSettings, setSliderSettings] = useState({
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3, // Default to 3 cards for desktop
     slidesToScroll: 1,
     nextArrow: <NextArrow darkMode={darkMode} />,
     prevArrow: <PrevArrow darkMode={darkMode} />,
     autoplay: true,
     autoplaySpeed: 3000,
+    initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024, // Tablets and mobile
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
         },
       },
     ],
+  });
+
+  // Adjust slider settings based on screen width
+  const adjustSliderSettings = () => {
+    const width = window.innerWidth;
+
+    if (width <= 1024) {
+      setSliderSettings((prevSettings) => ({
+        ...prevSettings,
+        slidesToShow: 1, // Show 1 slide on mobile and tablet
+        slidesToScroll: 1,
+      }));
+    } else {
+      setSliderSettings((prevSettings) => ({
+        ...prevSettings,
+        slidesToShow: 3, // Show 3 slides on desktop
+        slidesToScroll: 1,
+      }));
+    }
   };
 
-  // Carousel settings for the second slider (bank)
-  const settingsBank = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow darkMode={darkMode} />,
-    prevArrow: <PrevArrow darkMode={darkMode} />,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  useEffect(() => {
+    // Call on component mount
+    adjustSliderSettings();
+
+    // Add event listener for window resize to dynamically adjust settings
+    window.addEventListener("resize", adjustSliderSettings);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener("resize", adjustSliderSettings);
+    };
+  }, []);
 
   // Array of card data
   const cards = [
@@ -130,7 +129,7 @@ const Banking = ({ darkMode, setDarkMode }) => {
   const bank = [
     { id: '/bank1.jpg', title: 'Traides FX', description: 'Take trivial example which of us ever all undertakes laborious.' },
     { id: '/bank2.jpg', title: 'Multicurrency a/c', description: 'Explore our premium savings options with higher returns.' },
-    { id: 'bank3.jpg', title: 'Pension Scheme', description: 'Lock in great rates with our certificate of deposit.' },
+    { id: '/bank3.jpg', title: 'Pension Scheme', description: 'Lock in great rates with our certificate of deposit.' },
     { id: '/bank4.jpg', title: 'Mutual Funds', description: 'Maximize your savings with competitive interest rates.' },
   ];
 
@@ -178,7 +177,7 @@ const Banking = ({ darkMode, setDarkMode }) => {
             {/* Companies Card */}
             <a
               href="#"
-              className={`flex md:flex-row justify-between items-center sm:mr-20 w-[45%] p-4 ${companiesText} ${companiesBg} ${companiesHover} transition-all duration-300 transform hover:translate-y-[-20px]`}
+              className={`flex md:flex-row justify-between items-center sm:mr-20 w-full p-4 ${companiesText} ${companiesBg} ${companiesHover} transition-all duration-300 transform hover:translate-y-[-20px]`}
             >
               <div>
                 <p className="text-[12px] sm:text-[15px] md:text-[20px]">Banking for</p>
@@ -192,7 +191,7 @@ const Banking = ({ darkMode, setDarkMode }) => {
 
           {/* Carousel for Savings & CDs Cards */}
           <div className="w-full px-4">
-            <Slider {...settings}>
+            <Slider {...sliderSettings}>
               {cards.map((card) => (
                 <div key={card.id} className="px-2 ">
                   <div
@@ -252,7 +251,7 @@ const Banking = ({ darkMode, setDarkMode }) => {
                 <h1 className={`text-[25px] md:text-[40px] sm:text-[40px] font-bold ${textColor}`}>Grow Your Wealth Secure</h1>
                 <p className={`text-[12px] md:text-[20px] sm:text-[20px] ${textColor}`}>Don’t just make a deposit, make an investment today.</p>
             </div>
-        <Slider {...settingsBank}>
+        <Slider {...sliderSettings}>
   {bank.map((bank) => (
     <div key={bank.id} className="px-2">
       <div
