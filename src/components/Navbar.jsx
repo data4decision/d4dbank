@@ -101,7 +101,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               alt="D4DBank Logo"
               className="h-10 w-10 object-contain"
             />
-            <span className={`text-lg font-bold ${accent}`}>D4DBank</span>
+            <span className={`text-lg font-bold ${accent}`}>Smart Bank</span>
           </Link>
 
           {/* Desktop nav */}

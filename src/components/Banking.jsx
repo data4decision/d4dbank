@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { FaChevronDown, FaArrowRight, FaDatabase } from 'react-icons/fa';
+import { FaChevronDown, FaArrowRight, FaDatabase, FaCheck } from 'react-icons/fa';
 import Slider from 'react-slick';
+import Foreign from './Foreign';
+import Questions from './Questions';
 
 // Custom arrow components for the carousel
 const NextArrow = ({ onClick, darkMode }) => (
@@ -58,6 +60,8 @@ const Banking = ({ darkMode, setDarkMode }) => {
   const companiesHover = darkMode ? 'hover:bg-[#f47b20]' : 'hover:bg-[#ffffff]';
   const cardHoverText = darkMode ? 'text-[#f47b20]' : 'text-[#0b0b5c]';
   const btnColor = darkMode ? 'text-white' : 'text-[#ffffff]';
+    const atmBg = darkMode ? 'bg-white' : 'bg-[#0b0b5c]';
+    const primaryseBg = darkMode ? 'bg-orange-300' : 'bg-gray-100';
   
   const btnHover = darkMode 
     ? 'hover:bg-[#0b0b5c] hover:scale-105 hover:shadow-lg' 
@@ -472,7 +476,7 @@ const Banking = ({ darkMode, setDarkMode }) => {
     </div>
 
 
-          <div className="flex flex-col md:flex-row justify-around mt-10 md:mt-20 mx-5 md:mx-20 gap-4">
+          <div className="flex flex-col md:flex-row justify-around mt-10 md:mt-20 pb-30 mx-5 md:mx-20 gap-4">
   {/* Left column */}
   <div className="w-full md:w-1/2 border-1 h-[290px]">
     <a href="#" className="block">
@@ -551,7 +555,38 @@ const Banking = ({ darkMode, setDarkMode }) => {
 </div>
 </div>
 </div>
+<div className={`flex flex-col md:flex-row justify-around ${primaryBg}`}>
+  <div className={`${primaryBg} w-full h-[400px] sm:h-[600px] relative`}>
+   
+   <div className={`w-[50%] h-[400px] mx-auto h-full ${atmBg}`}></div>
+   <div className="absolute top-20 left-15 sm:top-27 sm:left-25 w-[70%] h-[60%] flex items-center justify-center">
+      <img src="/ATM.png" alt="" className='w-full '/>
+     </div>
+  </div>
+  <div className={`flex flex-col gap-5 w-full px-4 py-10 ${primaryseBg} ${accantText}`}>
+    <div className="w-[70%] mx-auto text-left">
+      <h1 className='text-[20px] md:text-[50px] sm:text-[40px]'>Personalize Your Card and Stand Out From Crowd</h1>
     </div>
+    <div className="flex flex-col gap-3 ml-25 text-[15px] md:text-[20px] sm:text-[20px]">
+      <div className="flex gap-3 items-center">
+      <p><FaCheck size={18}/></p>
+      <p>Great explorer of the master-builder</p>
+    </div>
+    <div className="flex gap-3 items-center">
+      <p><FaCheck size={18}/></p>
+      <p>The master-builder of great explorer</p>
+    </div>
+    </div>
+    <div className="flex flex-col gap-4 ml-25">
+      <h1 className="text-[15px] md:text-[20px] sm:text-[20px] font-bold ">Apply for Credit Card</h1>
+      <input type="text" placeholder='Name' className='border-1 w-[50%] px-2 py-2'/>
+      <button className={`${accentBtnBg} ${btnHover} text-white px-2 py-4 w-40 shadow-lg rounded-lg`}>Apply Now</button>
+    </div>
+  </div>
+</div>
+<Foreign darkMode={darkMode} setDarkMode={setDarkMode} />
+<Questions darkMode={darkMode} setDarkMode={setDarkMode} />
+</div>
   );
 };
 
