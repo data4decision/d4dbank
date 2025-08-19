@@ -132,7 +132,7 @@ const Flexible = ({ darkMode }) => {
                 }`}
               >
                 <img
-                  src="home.png" // Change this to individual images for each loan type if needed
+                  src="/home.png" // Change this to individual images for each loan type if needed
                   alt={`${loanType} icon`}
                   className="w-10 h-10"
                 />
