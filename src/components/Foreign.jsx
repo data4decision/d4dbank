@@ -32,7 +32,7 @@ const Foreign = ({ darkMode, setDarkMode }) => {
       };
 
   return (
-    <div className=" h-[1700px] sm:h-[700px]">
+    <div className=" h-[1900px] sm:h-[700px]">
         <h1 className={`text-[12px] md:text-[50px] sm:text-[20px] font-bold text-center pt-20 ${colors.textHg}`}>Foreign Exchange Rates</h1>
         <p className={`text-[12px] md:text-[20px] sm:text-[20px] font-bold text-center ${colors.text}`}>Denouncing pleasure & praising pain was born.</p>
         <div className="flex flex-col md:flex-row gap-4 justify-around relative mt-20 mb-20">

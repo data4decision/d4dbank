@@ -3,6 +3,8 @@ import { FaChevronDown, FaArrowRight, FaDatabase, FaCheck } from 'react-icons/fa
 import Slider from 'react-slick';
 import Foreign from './Foreign';
 import Questions from './Questions';
+import Travel from './Travel';
+import Flexible from './Flexible';
 
 // Custom arrow components for the carousel
 const NextArrow = ({ onClick, darkMode }) => (
@@ -586,6 +588,8 @@ const Banking = ({ darkMode, setDarkMode }) => {
 </div>
 <Foreign darkMode={darkMode} setDarkMode={setDarkMode} />
 <Questions darkMode={darkMode} setDarkMode={setDarkMode} />
+<Travel darkMode={darkMode} setDarkMode={setDarkMode} />
+<Flexible darkMode={darkMode} setDarkMode={setDarkMode} />
 </div>
   );
 };
