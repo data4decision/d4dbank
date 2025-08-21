@@ -44,7 +44,7 @@ const Questions = ({ darkMode }) => {
   
    const colors = darkMode
     ? {
-        questionBg: "bg-[#0b0b5c]",
+        questionBg: "bg-[#0b0b5c]/20",
         questionText: "text-[#f47b20]",
         heading: "text-[#f47b20]",
         link: "hover:text-[#ffb366]",

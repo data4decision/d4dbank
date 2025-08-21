@@ -94,7 +94,7 @@ function App() {
         <Route path="/services/account" element={<Account/>}/>
         <Route path="/services/cards" element={<Cards/>}/>
         <Route path="/services/loans" element={<Loans/>}/>
-        <Route path="/services/account/all-account" element={<AllAccount/>}/>
+        <Route path="/services/account/all-account" element={<AllAccount  darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
         <Route path="/services/account/current" element={<Current/>}/>
         <Route path="/services/account/fixed" element={<Fixed/>}/>
         <Route path="/services/account/nri" element={<Nri/>}/>
