@@ -18,7 +18,6 @@ const rangeValues = {};
 const LetThink = ({ darkMode = false }) => {
   // ✅ Coerce to real boolean (covers true/false and "true"/"false")
   const isDark = darkMode === true || darkMode === 'true';
-
   const primaryBg  = isDark ? 'bg-[#0b0b5c]' : 'bg-[#f47b20]';
   const bankBg     = isDark ? 'bg-gray-300' : 'bg-[#0b0b5c]';
   const textColor  = isDark ? 'text-white' : 'text-[#ffffff]';

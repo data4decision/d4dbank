@@ -95,13 +95,13 @@ function App() {
         <Route path="/services/cards" element={<Cards/>}/>
         <Route path="/services/loans" element={<Loans/>}/>
         <Route path="/services/account/all-account" element={<AllAccount  darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
-        <Route path="/services/account/current" element={<Current/>}/>
-        <Route path="/services/account/fixed" element={<Fixed/>}/>
-        <Route path="/services/account/nri" element={<Nri/>}/>
-        <Route path="/services/account/recurring" element={<Recurring/>}/>
-        <Route path="/services/account/salary" element={<Salary/>}/>
-        <Route path="/services/account/savings" element={<Savings/>}/>
-        <Route path="/services/cards/our-all-cards" element={<OurAllCards/>}/>
+        <Route path="/services/account/current" element={<Current darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
+        <Route path="/services/account/fixed" element={<Fixed darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
+        <Route path="/services/account/nri" element={<Nri darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
+        <Route path="/services/account/recurring" element={<Recurring darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
+        <Route path="/services/account/salary" element={<Salary darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
+        <Route path="/services/account/savings" element={<Savings darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
+        <Route path="/services/cards/our-all-cards" element={<OurAllCards darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
         <Route path="/services/cards/business" element={<Business/>}/>
         <Route path="/services/cards/cash-back" element={<Cashback/>}/>
         <Route path="/services/cards/low-interest" element={<Low/>}/>

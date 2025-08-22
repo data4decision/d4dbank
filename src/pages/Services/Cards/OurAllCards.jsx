@@ -1,8 +1,13 @@
 import React from 'react'
+import OurAllCardHero from '../../../components/OurAllCardHero'
+import CardCoperate from '../../../components/CardCoperate'
 
-const OurAllCards = () => {
+const OurAllCards = ({darkMode, setDarkMode}) => {
   return (
-    <div>OurAllCards</div>
+    <div>
+      <OurAllCardHero darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <CardCoperate darkMode={darkMode} setDarkMode={setDarkMode}/>
+    </div>
   )
 }
 
