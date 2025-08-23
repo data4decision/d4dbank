@@ -102,13 +102,13 @@ function App() {
         <Route path="/services/account/salary" element={<Salary darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
         <Route path="/services/account/savings" element={<Savings darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
         <Route path="/services/cards/our-all-cards" element={<OurAllCards darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
-        <Route path="/services/cards/business" element={<Business/>}/>
-        <Route path="/services/cards/cash-back" element={<Cashback/>}/>
-        <Route path="/services/cards/low-interest" element={<Low/>}/>
-        <Route path="/services/cards/rewards" element={<Rewards/>}/>
+        <Route path="/services/cards/business" element={<Business darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
+        <Route path="/services/cards/cash-back" element={<Cashback darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
+        <Route path="/services/cards/low-interest" element={<Low darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
+        <Route path="/services/cards/rewards" element={<Rewards darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
         <Route path="/services/cards/secured" element={<Secured/>}/>
         <Route path="/services/cards/travel" element={<Travel/>}/>
-        <Route path="/services/loans/home-loans" element={<HomeLoan/>}/>
+        <Route path="/services/loans/home-loan" element={<HomeLoan/>}/>
         <Route path="/services/loans/personal" element={<PersonalLoan/>}/>
         <Route path="/services/loans/vehicle" element={<VehicleLoan/>}/>
         <Route path="/services/loans/education" element={<EducationLoan/>}/>
