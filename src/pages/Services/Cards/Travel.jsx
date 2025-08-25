@@ -1,8 +1,13 @@
 import React from 'react'
+import TravelCardHero from '../../../components/TravelCardHero'
+import BusinessCard from '../../../components/BusinessCard'
 
-const Travel = () => {
+const Travel = ({darkMode, setDarkMode}) => {
   return (
-    <div>Travel</div>
+    <div>
+      <TravelCardHero darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <BusinessCard darkMode={darkMode} setDarkMode={setDarkMode}/>
+    </div>
   )
 }
 
