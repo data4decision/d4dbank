@@ -78,18 +78,18 @@ function App() {
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
         <Route path="/" element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/about/about-us" element={<AboutUs />} />
-        <Route path="/about/board" element={<Board />} />
-        <Route path="/about/director" element={<Director />} />
-        <Route path="/about/careers" element={<Careers />} />
-        <Route path="/about/career-detail" element={<CareerDetail />} />
-        <Route path="/about/faqs" element={<Faqs />} />
-        <Route path="/about/testimonials" element={<Testimonials />} />
-        <Route path="/about/news" element={<AboutNews />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/apply-now" element={<ApplyNow />} />
+        <Route path="/about" element={<About darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/about/about-us" element={<AboutUs darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/about/board" element={<Board darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/about/director" element={<Director darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/about/careers" element={<Careers darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/about/career-detail" element={<CareerDetail darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/about/faqs" element={<Faqs darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/about/testimonials" element={<Testimonials darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/about/news" element={<AboutNews darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/services" element={<Services darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/news" element={<News darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/apply-now" element={<ApplyNow darkMode={darkMode} setDarkMode={setDarkMode}/>} />
         <Route path="/get-in-touch" element={<GetInTouch darkMode={darkMode} setDarkMode={setDarkMode} />} />
         <Route path="/services/account" element={<Account/>}/>
         <Route path="/services/cards" element={<Cards/>}/>

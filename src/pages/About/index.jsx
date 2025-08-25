@@ -1,8 +1,13 @@
 import React from 'react'
+import AboutUsHero from '../../components/AboutUsHero'
+import AboutKnow from '../../components/AboutKnow'
 
-const index = () => {
+const index = ({darkMode, setDarkMode}) => {
   return (
-    <div>index</div>
+    <div>
+      <AboutUsHero darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <AboutKnow darkMode={darkMode} setDarkMode={setDarkMode}/>
+    </div>
   )
 }
 
