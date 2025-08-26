@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AboutUsHero = ({ darkMode }) => {
+const AboutBordDirectorHero = ({ darkMode }) => {
   const bgClass = darkMode ? "bg-[#0b0b5c]" : "bg-[#ffffff]";
   const textClass = darkMode ? "text-[#ffb366]" : "text-[#0b0b5c]";
   const borderClass = darkMode ? "border-t-4 border-[#ffb366]" : "border-t-4 border-[#0b0b5c]";
@@ -19,13 +19,13 @@ const AboutUsHero = ({ darkMode }) => {
           ${bgClass} ${borderClass} ${textClass}
           block px-3 py-2 sm:px-4 sm:py-4 font-semibold text-center
           text-lg sm:text-2xl md:text-4xl
-          rounded-lg shadow-lg w-[90vw] max-w-[320px] sm:max-w-[370px]
+          rounded-lg shadow-lg w-[70vw] max-w-[320px] sm:max-w-[370px]
         `}
       >
-        About Us
+        Board of Director
       </span>
     </div>
   );
 };
 
-export default AboutUsHero;
+export default AboutBordDirectorHero;
