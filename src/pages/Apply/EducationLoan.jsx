@@ -1,8 +1,13 @@
 import React from 'react'
+import EducationLoanHero from '../../components/EducationLoanHero'
+import LoanComponents from '../../components/LoanComponents'
 
-const EducationLoan = () => {
+const EducationLoan = ({darkMode, setDarkMode} ) => {
   return (
-    <div>EducationLoan</div>
+    <div>
+      <EducationLoanHero darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <LoanComponents darkMode={darkMode} setDarkMode={setDarkMode}/>
+      </div>
   )
 }
 

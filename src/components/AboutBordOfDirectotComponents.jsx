@@ -31,7 +31,7 @@ const AboutBordOfDirectotComponents = ({ darkMode }) => {
   };
 
   return (
-    <div className={`${bankBg}`}>
+    <div className={`${bankBg} pt-20 pb-20`}>
       <div className={`${bankBg}`}>
         <h1 className={`text-[25px] md:text-[40px] sm:text-[40px] font-bold text-center mt-15 ${textColor}`}>
           Our Management Team
@@ -48,7 +48,7 @@ const AboutBordOfDirectotComponents = ({ darkMode }) => {
                 <img
                   src={(member.id || '').replace(/\.$/, '')}
                   alt=""
-                  className={`w-full h-[300px] object-cover grayscale-95 transition-all duration-300 group-hover:grayscale-0 group-hover:scale-105`}
+                  className={`w-full h-[300px] object-cover  transition-all duration-300 group-hover:grayscale-0 group-hover:scale-105`}
                 />
                 <button
                   onClick={() => SocialMediaIcons(member.name)} // Pass member's name to toggle visibility

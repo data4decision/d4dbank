@@ -1,8 +1,13 @@
 import React from 'react'
+import AboutCareerHero from '../../components/AboutCareerHero'
+import AboutCareerComponent from '../../components/AboutCareerComponent'
 
-const Careers = () => {
+const Careers = ({darkMode, setDarkMode}) => {
   return (
-    <div>Careers</div>
+    <div>
+      <AboutCareerHero darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <AboutCareerComponent darkMode={darkMode} setDarkMode={setDarkMode}/>
+    </div>
   )
 }
 

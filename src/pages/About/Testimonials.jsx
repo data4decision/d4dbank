@@ -1,8 +1,13 @@
 import React from 'react'
+import AboutTestimonialComp from '../../components/AboutTestimonialComp'
+import AboutTestimonialHero from '../../components/AboutTestimonialHero'
 
-const Testimonials = () => {
+const Testimonials = ({darkMode, setDarkMode}) => {
   return (
-    <div>Testimonials</div>
+    <div>
+      <AboutTestimonialHero darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <AboutTestimonialComp darkMode={darkMode} setDarkMode={setDarkMode}/>
+    </div>
   )
 }
 
