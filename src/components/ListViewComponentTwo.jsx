@@ -4,7 +4,7 @@ import { FaArrowRight, FaClock, FaLink, FaMessage, FaPlay, FaShare } from 'react
 import Slider from "react-slick";
 import PaginationListGrid from "../components/PaginationListGrid"
 
-const ListViewComponent = ({darkMode}) => {
+const ListViewComponentTwo = ({darkMode}) => {
 
     const primaryBg = darkMode ? 'bg-[#0b0b5c]' : 'bg-[#f47b20]';
   const primarysBg = darkMode ? 'bg-[#f47b20]' : 'bg-[#0b0b5c]';
@@ -27,7 +27,7 @@ const ListViewComponent = ({darkMode}) => {
     { id: '/reach.jpg', name: 'Rose Tailor', date: 'Corporate Marketing', description:"How Non-US Citizens can Open a Bank Account", message:"Don’t just save money, make more money with a checking account from us. – Franklin Every citizens ..."  },
     { id: '/vision.jpg', name: 'Rose Tailor', date: 'Corporate Marketing', description:"How Non-US Citizens can Open a Bank Account", message:"Don’t just save money, make more money with a checking account from us. – Franklin Every citizens ..."  },
     { id: '/happy.jpg', name: 'Rose Tailor', date: 'Corporate Marketing', description:"How Non-US Citizens can Open a Bank Account", message:"Don’t just save money, make more money with a checking account from us. – Franklin Every citizens ..."  },
-    { id: '/bank4.jpg', name: 'Rose Tailor', date: 'Corporate Marketing', description:"How Non-US Citizens can Open a Bank Account", message:"Don’t just save money, make more money with a checking account from us. – Franklin Every citizens ..."  },
+    { id: '/bank3.jpg', name: 'Rose Tailor', date: 'Corporate Marketing', description:"How Non-US Citizens can Open a Bank Account", message:"Don’t just save money, make more money with a checking account from us. – Franklin Every citizens ..."  },
    
   ];
 
@@ -261,4 +261,4 @@ const ListViewComponent = ({darkMode}) => {
   )
 }
 
-export default ListViewComponent
+export default ListViewComponentTwo

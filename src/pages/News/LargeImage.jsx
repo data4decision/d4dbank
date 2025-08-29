@@ -1,8 +1,13 @@
 import React from 'react'
+import LargeImageHero from '../../components/LargeImageHero'
+import LargeImageComponent from '../../components/LargeImageComponent'
 
-const LargeImage = () => {
+const LargeImage = ({darkMode, setDarkMode}) => {
   return (
-    <div>LargeImage</div>
+    <div>
+      <LargeImageHero darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <LargeImageComponent darkMode={darkMode} setDarkMode={setDarkMode}/>
+    </div>
   )
 }
 

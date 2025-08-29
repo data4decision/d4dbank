@@ -278,12 +278,13 @@ const Flexible = ({ darkMode }) => {
         </div>
       </div>
 
-      <div className="relative w-full flex justify-center items-center mt-20 bg-black bg-opacity-30">
+      <div className="relative w-full flex justify-center items-center mt-20 bg-black">
         <img
           src="/contact.jpg"
           alt="hero"
-          className="w-full h-[180px] sm:h-[250px] md:h-[300px] object-cover"
+          className="w-full h-[180px] sm:h-[250px] md:h-[300px] object-cover relative"
         />
+        <span className="absolute bg-black/60 w-full h-[300px]"></span>
         <div className="flex flex-col md:flex-row justify-around items-center gap-5 absolute left-0 top-0 w-full h-full">
           <div>
             <div>

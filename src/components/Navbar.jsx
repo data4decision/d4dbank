@@ -91,15 +91,15 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       ref={navbarRef}
       className={`${navBg} ${navText} sticky top-0 z-50 w-full font-sans shadow transition-colors duration-300`}
     >
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto max-w-7xl px-4 py-3">
         {/* Top row */}
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 items-center justify-between ">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex flex-col items-center leading-none">
             <img
               src="/logo.png"
               alt="D4DBank Logo"
-              className="h-10 w-10 object-contain"
+              className="h-13 w-13 object-contain"
             />
             <span className={`text-lg font-bold ${accent}`}>Smart Bank</span>
           </Link>
@@ -139,7 +139,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                   >
                     <li><Link to="/about/about-us" className="block rounded px-4 py-2 hover:bg-black/10">About Us</Link></li>
                     <li><Link to="/about/board" className="block rounded px-4 py-2 hover:bg-black/10">Board of Directors</Link></li>
-                    <li><Link to="/about/director" className="block rounded px-4 py-2 hover:bg-black/10">Director Details</Link></li>
+                    {/* <li><Link to="/about/director" className="block rounded px-4 py-2 hover:bg-black/10">Director Details</Link></li> */}
                     <li><Link to="/about/careers" className="block rounded px-4 py-2 hover:bg-black/10">Careers</Link></li>
                     <li><Link to="/about/career-detail" className="block rounded px-4 py-2 hover:bg-black/10">Career Detail</Link></li>
                     <li><Link to="/about/faqs" className="block rounded px-4 py-2 hover:bg-black/10">FAQs</Link></li>

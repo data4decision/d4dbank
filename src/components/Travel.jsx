@@ -71,18 +71,18 @@ function Travel({ darkMode }) {
       };
 
   return (
-    <div className="slider-container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div className="slider-container   w-full mx-auto ">
       <Slider {...settings}>
         {["/offer1.png", "/offer2.png"].map((image, index) => (
           <div key={index} className="relative">
             <img
               src={image}
               alt={`Offer ${index + 1}`}
-              className="w-[full] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+              className="w-[full] h-[300px] sm:h-[400px] md:h-[500px] md:w-full lg:h-[600px] md:object-cover object-contain"
             />
             <button
               type="button"
-              className={`absolute top-[80%] sm:top-[25%] md:top-[30%] left-4 sm:left-6 md:left-8 lg:left-10 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-center cursor-pointer rounded-md shadow-md transition duration-300 ${colors.text} ${colors.personalBtn} hover:opacity-90`}
+              className={`absolute top-[75%] sm:top-[80%] md:top-[85%] left-4 sm:left-16 md:left-18 lg:left-18 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base md:text-lg font-bold text-center cursor-pointer rounded-md shadow-md transition duration-300 ${colors.text} ${colors.personalBtn} hover:opacity-90`}
             >
               Grab Your Deal
             </button>

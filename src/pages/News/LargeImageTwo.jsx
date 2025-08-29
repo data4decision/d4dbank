@@ -2,7 +2,7 @@ import React from 'react'
 import LargeImageTwoHero from '../../components/LargeImageTwoHero'
 import LargeImageTwoComponent from '../../components/LargeImageTwoComponent'
 
-const SinglePost = ({darkMode, setDarkMode}) => {
+const LargeImageTwo = ({darkMode, setDarkMode}) => {
   return (
     <div>
       <LargeImageTwoHero darkMode={darkMode} setDarkMode={setDarkMode}/>
@@ -11,4 +11,4 @@ const SinglePost = ({darkMode, setDarkMode}) => {
   )
 }
 
-export default SinglePost
+export default LargeImageTwo

@@ -44,9 +44,9 @@ const Questions = ({ darkMode }) => {
   
    const colors = darkMode
     ? {
-        questionBg: "bg-[#0b0b5c]/20",
+        questionBg: "bg-[#9CA3AF]",
         questionText: "text-[#f47b20]",
-        heading: "text-[#f47b20]",
+        heading: "text-[#ffffff]",
         link: "hover:text-[#ffb366]",
         border: "border-[#f47b20]",
         personalBtn: "bg-blue-400 text-[#0b0b5c] hover:bg-blue-500",
@@ -74,15 +74,15 @@ const Questions = ({ darkMode }) => {
       {/* Header and Search Section */}
       <div className="flex flex-col sm:flex-row items-center justify-around gap-4 p-4">
         <div>
-          <h1 className={`text-[15px] sm:text-[40px] font-bold ${colors.heading}`}>
+          <h1 className={`text-[25px] sm:text-[40px] font-bold ${colors.heading}`}>
             Questions & Answers
           </h1>
-          <p className={`text-[15px] sm:text-[20px] ${colors.questionText}`}>
+          <p className={`text-[20px] sm:text-[30px] ${colors.questionText}`}>
             Find answers to all your queries about our service.
           </p>
         </div>
         <div className="flex flex-col gap-4">
-          <p className={`text-[15px] sm:text-[20px] ${colors.questionText}`}>
+          <p className={`text-[20px] sm:text-[30px] ${colors.questionText}`}>
             Help You to Find
           </p>
           <div className="relative w-full max-w-sm">

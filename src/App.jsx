@@ -65,6 +65,8 @@ import Vehicle from './pages/Apply/VehicleLoan'
 import Education from './pages/Apply/EducationLoan'
 import Gold from './pages/Apply/GoldLoan'
 import GridViewTwo from './pages/News/GridViewTwo'
+import ListViewTwo from './pages/News/ListViewTwo'
+import LargeImageTwo from './pages/News/LargeImageTwo'
 
 
 function App() {
@@ -116,10 +118,12 @@ function App() {
         <Route path="/services/loans/gold" element={<GoldLoan darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
         <Route path="/news/grid" element={<GridView darkMode={darkMode} setDarkMode={setDarkMode}/>} />
         <Route path="/news/grid-two" element={<GridViewTwo darkMode={darkMode} setDarkMode={setDarkMode}/>} />
-         <Route path="/news/large" element={<LargeImage darkMode={darkMode} setDarkMode={setDarkMode}/>} />
-          <Route path="/news/list" element={<ListView darkMode={darkMode} setDarkMode={setDarkMode}/>} />
-           <Route path="/news/single" element={<SinglePost darkMode={darkMode} setDarkMode={setDarkMode}/>} />
-           <Route path="/apply/home-loan" element={<Homel darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
+        <Route path="/news/large" element={<LargeImage darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/news/large-two" element={<LargeImageTwo darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/news/list" element={<ListView darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/news/list-two" element={<ListViewTwo darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/news/single" element={<SinglePost darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+        <Route path="/apply/home-loan" element={<Homel darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
         <Route path="/apply/personal" element={<Personal darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
         <Route path="/apply/vehicle" element={<Vehicle darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
         <Route path="/apply/education" element={<Education darkMode={darkMode} setDarkMode={setDarkMode}/>}/>
