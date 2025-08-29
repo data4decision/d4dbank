@@ -1,0 +1,14 @@
+* text=auto eol=lf
+
+# binary files — don't change line endings
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.gif -text
+*.webp -text
+*.ico -text
+*.pdf -text
+*.zip -text
+
+# svg is text; keep LF
+*.svg text eol=lf
